@@ -13,8 +13,9 @@ client.on('error', err => console.log('Redis Client Error', err));
 
 await client.connect();
 
-let res = await client.set("name","Radha")
+// let res = await client.set("name","Radha")
+let name = await client.get("name")
 
-console.log("resposne:", res);
+console.log(name);
 
 process.exit(0);
